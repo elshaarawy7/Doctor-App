@@ -7,15 +7,15 @@ import 'package:doctor_app/core/util/styles/color.app.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class SinIn extends StatefulWidget {
-  const SinIn({super.key});
+class CreateAcount extends StatefulWidget {
+  const CreateAcount({super.key});
 
   @override
-  State<SinIn> createState() => _SinInState();
+  State<CreateAcount> createState() => _CreateAcountState();
 }
 
-class _SinInState extends State<SinIn> {
-  bool isRememberMe = false;
+class _CreateAcountState extends State<CreateAcount> {
+    bool isRememberMe = false;
 
   final formkey = GlobalKey<FormState>();
   @override
@@ -34,7 +34,7 @@ class _SinInState extends State<SinIn> {
                 Align(
                   alignment: Alignment.topLeft,
                   child: Text(
-                    "Welcom Back",
+                    "Create acount",
                     style: TextStyle(
                       color: Color_app.blue,
                       fontSize: 30,
@@ -44,7 +44,7 @@ class _SinInState extends State<SinIn> {
                 ),
         
                 Text(
-                  "We're excited to have you back, can't wait to see what you've been up to since you last logged in.",
+                  "Sign up now and start exploring all that our app has to offer. We're excited to welcome you to our community!",
                   style: TextStyle(
                     color: Colors.grey,
                     fontSize: 16,
@@ -74,13 +74,25 @@ class _SinInState extends State<SinIn> {
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return "please enter your password";
-                    } else if (value.length < 6) {
+                    } else if (value.length > 6) {
                       return "Password must be at least 6 characters";
                     }
                   },
                 ),
         
-                SizedBox(height: 10),
+                SizedBox(height: 10), 
+
+                CustemTextFiled(
+                  hintText: "phone number",
+                  obscureText: false,
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return "please enter your password";
+                    } else if (value.length > 6) {
+                      return "Password must be at least 6 characters";
+                    }
+                  },
+                ),
         
                 Row(
                   children: [
@@ -108,7 +120,7 @@ class _SinInState extends State<SinIn> {
                     ),
         
                     Spacer(),
-                     TextButton(
+                    TextButton(
                       onPressed: () {
                         context.go(AppRouter.forget_password) ;
                       },
@@ -121,11 +133,9 @@ class _SinInState extends State<SinIn> {
                 SizedBox(height: 20),
         
                 MyBatton(
-                  text: 'Login',
+                  text: 'Create Account',
                   onPressed: () {
-                    if (formkey.currentState!.validate()) {
-                      context.go(AppRouter.home_page) ;
-                    }
+                    if (formkey.currentState!.validate()) {}
                   },
                 ),
         
@@ -163,9 +173,7 @@ class _SinInState extends State<SinIn> {
                     ),
         
                     TextButton(
-                      onPressed: () {
-                        context.go(AppRouter.createAcount);
-                      },
+                      onPressed: () {},
                       child: Text(
                         "Sing UP",
                         style: TextStyle(
