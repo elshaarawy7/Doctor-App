@@ -1,4 +1,4 @@
-import 'package:doctor_app/Futcher/ui/screens/splash_screan.dart';
+import 'package:doctor_app/page_swip.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -16,7 +16,7 @@ class DoctorApp extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: Colors.white , 
       ), 
-      home: SplashScrean(),
+      home: PageSwip() ,
     );
   }
 }
