@@ -1,7 +1,9 @@
 import 'package:doctor_app/Futcher/ui/widgets/my_batton.dart';
+import 'package:doctor_app/core/util/app_router.dart';
 import 'package:doctor_app/core/util/const_image.dart';
 import 'package:doctor_app/core/util/styles/color.app.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class OnboardingScreen extends StatelessWidget {
   const OnboardingScreen({super.key});
@@ -24,9 +26,7 @@ class OnboardingScreen extends StatelessWidget {
                   bottom: 0,
                   left: 0,
                   right: 0,
-                  child: Image.asset(
-                    "assets/Linear Effect.png",
-                  ), // عاوز اخلي الصوره دي تنزل تحت شويه
+                  child: Image.asset("assets/Linear Effect.png"),
                 ),
 
                 Positioned(
@@ -64,14 +64,16 @@ class OnboardingScreen extends StatelessWidget {
                   child: Text("with Docdoc to get a new experience."),
                 ),
               ],
-            ), 
+            ),
 
-            SizedBox(height: 30) ,
+            SizedBox(height: 30),
 
-            MyBatton( onPressed: () {
-              
-            },
-              text: "Get Started")
+            MyBatton(
+              onPressed: () {
+
+               context.go(AppRouter.KSingIn);
+
+              }, text: "Get Started"),
           ],
         ),
       ),

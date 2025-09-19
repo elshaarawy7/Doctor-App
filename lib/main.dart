@@ -1,3 +1,4 @@
+import 'package:doctor_app/core/util/app_router.dart';
 import 'package:doctor_app/page_swip.dart';
 import 'package:flutter/material.dart';
 
@@ -11,12 +12,12 @@ class DoctorApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
+      routerConfig:AppRouter.router , 
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         scaffoldBackgroundColor: Colors.white , 
       ), 
-      home: PageSwip() ,
     );
   }
 }
