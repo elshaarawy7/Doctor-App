@@ -7,18 +7,14 @@ class CustemItemScoil extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Container(
-                height: 75, 
-                width: 75, 
-                decoration: BoxDecoration(
-                  color: Color(0xffF5F5F5) , 
-                  borderRadius: BorderRadius.circular(75) , 
-                ), 
-                child: Image.asset(image , fit: BoxFit.cover,),
-               ) ,
-      ],
-    );
+    return Container(
+            height: 75, 
+            width: 75, 
+            decoration: BoxDecoration(
+              color: Color(0xffF5F5F5) , 
+              borderRadius: BorderRadius.circular(75) , 
+            ), 
+            child: Image.asset(image , fit: BoxFit.cover,),
+           );
   }
 }

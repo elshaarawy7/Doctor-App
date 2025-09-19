@@ -1,4 +1,5 @@
 import 'package:doctor_app/Futcher/ui/widgets/custem_divider.dart';
+import 'package:doctor_app/Futcher/ui/widgets/custem_item_scoil.dart';
 import 'package:doctor_app/Futcher/ui/widgets/custem_text_filed.dart';
 import 'package:doctor_app/Futcher/ui/widgets/my_batton.dart';
 import 'package:doctor_app/core/util/styles/color.app.dart';
@@ -122,9 +123,50 @@ class _SinInState extends State<SinIn> {
 
               SizedBox(height: 20),
 
-               CustemDivider() ,
+              CustemDivider(),
 
-                
+              SizedBox(height: 20),
+
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  CustemItemScoil(
+                    image: 'assets/scoile/Login alternative (1).png',
+                  ),
+                  SizedBox(width: 30),
+                  CustemItemScoil(image: 'assets/scoile/Login alternative.png'),
+                  SizedBox(width: 30),
+                  CustemItemScoil(image: 'assets/scoile/Logo.png'),
+                ],
+              ),
+
+              SizedBox(height: 20),
+
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "Already have an account yet?",
+                    style: TextStyle(
+                      color: Colors.grey,
+                      fontSize: 14,
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),
+
+                  TextButton(
+                    onPressed: () {},
+                    child: Text(
+                      "Sing UP",
+                      style: TextStyle(
+                        color: Color_app.blue,
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ],
           ),
         ),
