@@ -1,3 +1,4 @@
+import 'package:doctor_app/Futcher/ui/widgets/custem_divider.dart';
 import 'package:doctor_app/Futcher/ui/widgets/custem_text_filed.dart';
 import 'package:doctor_app/Futcher/ui/widgets/my_batton.dart';
 import 'package:doctor_app/core/util/styles/color.app.dart';
@@ -121,23 +122,9 @@ class _SinInState extends State<SinIn> {
 
               SizedBox(height: 20),
 
-              Row(
-                children: [
-                  Divider(
-                    height: 1, // ارتفاع الخط
-                    thickness: 0.5, // سماكة الخط
-                    color: Colors.grey, // لون الخط (يمكن تعديله حسب التصميم)
-                  ), 
+               CustemDivider() ,
 
-                  Text("Or sign in with") , 
-
-                   Divider(
-                    height: 1, // ارتفاع الخط
-                    thickness: 0.5, // سماكة الخط
-                    color: Colors.grey, // لون الخط (يمكن تعديله حسب التصميم)
-                  ), 
-                ],
-              ),
+                
             ],
           ),
         ),
