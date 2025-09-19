@@ -9,22 +9,21 @@ class MyBatton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      style: ElevatedButton.styleFrom(
-        backgroundColor: Colors.blue, // لون الباتون
-        padding: EdgeInsets.symmetric(horizontal: 12), // Padding أفقي 12
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadiusGeometry.circular(15),
-        ),
-      ),
-      onPressed: onPressed,
-      child: Text(
-        text,
-        style: TextStyle(
-          color: Colors.white, // لون النص
-          fontSize: 16, // ممكن تغير الحجم حسب الحاجة
-          fontWeight: FontWeight.bold,
-        ),
-      ),
-    );
+  onPressed: onPressed , 
+  style: ElevatedButton.styleFrom(
+    backgroundColor: Color(0xFF1E90FF), // Blue color similar to the button
+    padding: EdgeInsets.symmetric(horizontal: 130, vertical: 15),
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(10),
+    ),
+  ),
+  child: Text(
+    text,
+    style: TextStyle(
+      fontSize: 16,
+      color: Colors.white,
+    ),
+  ),
+);
   }
 }
