@@ -1,4 +1,5 @@
 import 'package:doctor_app/core/util/const_image.dart';
+import 'package:doctor_app/core/util/styles/color.app.dart';
 import 'package:flutter/material.dart';
 
 class OnboardingScreen extends StatelessWidget {
@@ -25,10 +26,39 @@ class OnboardingScreen extends StatelessWidget {
                   child: Image.asset("assets/Linear Effect.png"), // عاوز اخلي الصوره دي تنزل تحت شويه 
                 ) ,  
                  
-                 
+                 Positioned(
+                  bottom: 120,
+                  child: Text("Best Doctor" , style: TextStyle(
+                    color: Color_app.blue , 
+                    fontSize: 30 , 
+                    fontWeight: FontWeight.bold , 
+                  ),)) ,  
+
+                  Positioned(
+                  bottom: 80,
+                  child: Text("Appointment App" , style: TextStyle(
+                    color: Color_app.blue , 
+                    fontSize: 30 , 
+                    fontWeight: FontWeight.bold , 
+                  ),) , ) ,
+
+                  Positioned(
+                    bottom: 30, 
+                    child: Text("Manage and schedule all of your medical appointments easily "),
+                  ) , 
+                  Positioned(
+                    bottom: 10,
+                    child: Text("with Docdoc to get a new experience."),
+                  ) , 
+
+                  
+
+
                 
               ],
-            )
+            ) , 
+
+            
           ],
         ),
       ),
