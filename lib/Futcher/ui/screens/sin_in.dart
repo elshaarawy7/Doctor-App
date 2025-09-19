@@ -1,39 +1,145 @@
+import 'package:doctor_app/Futcher/ui/widgets/custem_text_filed.dart';
+import 'package:doctor_app/Futcher/ui/widgets/my_batton.dart';
 import 'package:doctor_app/core/util/styles/color.app.dart';
 import 'package:flutter/material.dart';
 
-class SinIn extends StatelessWidget {
+class SinIn extends StatefulWidget {
   const SinIn({super.key});
 
+  @override
+  State<SinIn> createState() => _SinInState();
+}
+
+class _SinInState extends State<SinIn> {
+  bool isRememberMe = false;
+
+  final formkey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 12),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
+        child: Form(
+          key: formkey,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              SizedBox(height: 100),
 
-            SizedBox(height: 100,) , 
+              Align(
+                alignment: Alignment.topLeft,
+                child: Text(
+                  "Welcom Back",
+                  style: TextStyle(
+                    color: Color_app.blue,
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
 
-            Text("Welcom Back" , style: TextStyle(
-              color:Color_app.blue , 
-              fontSize: 30 ,  
-              fontWeight: FontWeight.bold , 
-            ),) , 
+              Text(
+                "We're excited to have you back, can't wait to see what you've been up to since you last logged in.",
+                style: TextStyle(
+                  color: Colors.grey,
+                  fontSize: 16,
+                  fontWeight: FontWeight.w400,
+                ),
+                maxLines: 3,
+                overflow: TextOverflow.ellipsis,
+              ),
 
-            Text("We're excited to have you back, can't wait to see what you've been up to since you last logged in." , 
-             style: TextStyle(
-              color: Colors.grey , 
-              fontSize: 16 , 
-              fontWeight: FontWeight.w400 , 
-             ), 
-             maxLines: 3, 
-             overflow: TextOverflow.ellipsis,
-            ) , 
+              SizedBox(height: 50),
 
-            
-            
-          ],
+              CustemTextFiled(
+                hintText: "Email",
+                obscureText: false,
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return "please enter your Email";
+                  }
+                },
+              ),
+
+              SizedBox(height: 10),
+
+              CustemTextFiled(
+                hintText: "password",
+                obscureText: false,
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return "please enter your password";
+                  } else if (value.length > 6) {
+                    return "Password must be at least 6 characters";
+                  }
+                },
+              ),
+
+              SizedBox(height: 10),
+
+              Row(
+                children: [
+                  IconButton(
+                    onPressed: () {
+                      setState(() {
+                        isRememberMe = !isRememberMe;
+                      });
+                    },
+                    icon: Icon(
+                      isRememberMe
+                          ? Icons.check_box
+                          : Icons.check_box_outline_blank,
+                      color: Colors.grey,
+                    ),
+                  ),
+
+                  Text(
+                    "Remember me",
+                    style: TextStyle(
+                      color: Colors.grey,
+                      fontSize: 14,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+
+                  Spacer(),
+                  Text(
+                    "Forget Password",
+                    style: TextStyle(color: Color_app.blue),
+                  ),
+                ],
+              ),
+
+              SizedBox(height: 20),
+
+              MyBatton(
+                text: 'Login',
+                onPressed: () {
+                  if (formkey.currentState!.validate()) {}
+                },
+              ),
+
+              SizedBox(height: 20),
+
+              Row(
+                children: [
+                  Divider(
+                    height: 1, // ارتفاع الخط
+                    thickness: 0.5, // سماكة الخط
+                    color: Colors.grey, // لون الخط (يمكن تعديله حسب التصميم)
+                  ), 
+
+                  Text("Or sign in with") , 
+
+                   Divider(
+                    height: 1, // ارتفاع الخط
+                    thickness: 0.5, // سماكة الخط
+                    color: Colors.grey, // لون الخط (يمكن تعديله حسب التصميم)
+                  ), 
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
