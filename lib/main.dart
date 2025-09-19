@@ -2,11 +2,11 @@ import 'package:doctor_app/Futcher/ui/screens/splash_screan.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const DoctorApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class DoctorApp extends StatelessWidget {
+  const DoctorApp({super.key});
 
   // This widget is the root of your application.
   @override
