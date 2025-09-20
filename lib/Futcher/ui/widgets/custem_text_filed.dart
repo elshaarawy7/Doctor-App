@@ -4,12 +4,14 @@ class CustemTextFiled extends StatelessWidget {
   const CustemTextFiled({
     super.key,
     required this.hintText,
-    required this.obscureText, this.validator,
+    required this.obscureText, 
+    this.validator,
+    this.icon 
   });
   final String hintText;
   final bool obscureText;
-  final String? Function(String?)? validator; // النوع الصح
-
+  final String? Function(String?)? validator; 
+  final IconData? icon ;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
@@ -19,6 +21,7 @@ class CustemTextFiled extends StatelessWidget {
         filled: true,
         fillColor: Color(0xffFDFDFF),
         hintText: hintText,
+        prefixIcon: icon != null ? Icon(icon , color: Colors.grey,) : null,
         hintStyle: TextStyle(color: Color(0xffC2C2C2)),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),
