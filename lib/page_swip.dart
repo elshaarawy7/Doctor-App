@@ -1,3 +1,4 @@
+import 'package:doctor_app/Futcher/ui/screens/doctor_speciality.dart';
 import 'package:doctor_app/Futcher/ui/screens/onboarding_screen.dart';
 import 'package:doctor_app/Futcher/ui/screens/splash_screan.dart';
 import 'package:flutter/material.dart';
@@ -25,6 +26,7 @@ class _PageSwipState extends State<PageSwip> {
       children: [
         SplashScrean() , 
         OnboardingScreen() , 
+        
       ],
     );
   }

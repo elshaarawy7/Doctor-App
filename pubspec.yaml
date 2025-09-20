@@ -64,6 +64,7 @@ flutter:
     - assets/
     - assets/scoile/
     - assets/home_page/
+    - assets/Doctor Speciality/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

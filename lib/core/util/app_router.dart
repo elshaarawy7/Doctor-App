@@ -1,4 +1,5 @@
 import 'package:doctor_app/Futcher/ui/screens/create_acount.dart';
+import 'package:doctor_app/Futcher/ui/screens/doctor_speciality.dart';
 import 'package:doctor_app/Futcher/ui/screens/forget_passowrd_page.dart';
 import 'package:doctor_app/Futcher/ui/screens/home_page.dart';
 import 'package:doctor_app/Futcher/ui/screens/sin_in.dart';
@@ -12,6 +13,7 @@ class AppRouter {
   static const createAcount = '/createAcount' ;
   static const forget_password = '/forget_passowrd' ;
   static const home_page = '/HomePage' ;
+  static const doctor_Speciality = '/DoctorSpeciality' ;
   
   static final router = GoRouter(
     routes: [
@@ -39,7 +41,13 @@ class AppRouter {
       GoRoute(
         path: forget_password , 
         builder: (context, state) => ForgetPassowrdPage(),
-      )
+      ) , 
+
+      GoRoute(
+  path: doctor_Speciality,
+  builder: (context, state)=> DoctorSpecialityGrid(),
+),
+
     ]
   );
 } 
