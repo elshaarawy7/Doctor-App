@@ -94,14 +94,17 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
 
-                Text(
-                  "see all",
+                TextButton(
+                  onPressed: () {
+                    context.go(AppRouter.recomdation_doctor) ;
+                  },
+                child: Text("see all",
                   style: TextStyle(
                     color: Color_app.blue,
                     fontSize: 18,
                     fontWeight: FontWeight.w500,
                   ),
-                ),
+                ),) ,
               ],
             ),
 
